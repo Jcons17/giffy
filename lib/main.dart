@@ -16,6 +16,10 @@ class GiffyApp extends StatelessWidget {
         themeMode: ThemeMode.dark,
         darkTheme: ThemeData(
           scaffoldBackgroundColor: bgColorDark,
+          inputDecorationTheme: InputDecorationTheme(
+              border: InputBorder.none,
+              constraints: BoxConstraints(maxWidth: 300),
+              contentPadding: EdgeInsets.all(8)),
           textTheme: const TextTheme(
             bodyMedium: TextStyle(color: Colors.white),
           ),
