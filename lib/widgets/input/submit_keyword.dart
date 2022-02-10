@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:giffy/services/http_gifs.dart';
 
 class SubmitButton extends StatefulWidget {
   const SubmitButton({Key? key}) : super(key: key);
@@ -36,5 +37,7 @@ class _SubmitButtonState extends State<SubmitButton> {
     );
   }
 
-  handlePress() async {}
+  handlePress() async {
+    final gifs = await HttpGifs.fetchGifs("morty");
+  }
 }

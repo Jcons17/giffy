@@ -14,16 +14,20 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        height: double.infinity,
         width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            HeaderHome(),
-            SizedBox(height: 30),
-            FormKeyword(),
-            SizedBox(height: 30),
-            ListOfGifs()
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: const [
+              HeaderHome(),
+              SizedBox(height: 30),
+              FormKeyword(),
+              SizedBox(height: 30),
+              //Container(height: 600, color: Colors.red)
+              ListOfGifs()
+            ],
+          ),
         ),
       ),
     );
