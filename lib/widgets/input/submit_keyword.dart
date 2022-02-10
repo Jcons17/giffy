@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:giffy/services/http_gifs.dart';
 
 class SubmitButton extends StatefulWidget {
-  const SubmitButton({Key? key}) : super(key: key);
-
+  const SubmitButton({Key? key, required this.formKey}) : super(key: key);
+  final GlobalKey<FormState> formKey;
   @override
   State<SubmitButton> createState() => _SubmitButtonState();
 }
@@ -38,6 +38,8 @@ class _SubmitButtonState extends State<SubmitButton> {
   }
 
   handlePress() async {
-    final gifs = await HttpGifs.fetchGifs("morty");
+    if (widget.formKey.currentState!.validate()) {
+      widget.formKey.currentState!.save();
+    }
   }
 }
